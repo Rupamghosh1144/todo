@@ -7,7 +7,6 @@ import taskRoutes from './routes/tasks.js';
 
 const app = express();
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
@@ -17,12 +16,12 @@ app.use('/api/tasks', taskRoutes);
 
 
 app.get("/", (req, res) => {
-  res.send("Home Page - API is running ✅");
+  res.send("Home Page - API is running");
 });
 
 
 const PORT = 5000;
-const MONGO_URI = 'mongodb://localhost:27017/todo'; // Local MongoDB URL
+const MONGO_URI = 'mongodb://localhost:27017/todo'; 
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
